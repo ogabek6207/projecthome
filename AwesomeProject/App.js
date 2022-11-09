@@ -1,20 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
+import {StatusBar} from 'react-native';
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import CarsList from './components/CarsList';
+import Header from './components/Header';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -47,28 +35,17 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Model S</Text>
-        <Text style={styles.subTitle}>Model S</Text>
-        <View style={styles.carContainer}></View>
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Header />
+      <CarsList />
+      <StatusBar style="auto" />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
+  container: {},
   carContainer: {},
   title: {
     marginTop: 8,
