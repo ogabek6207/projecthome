@@ -9,23 +9,14 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
-  TextInput,
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -64,106 +55,27 @@ const App: () => Node = () => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-
-          <View style = {{
-            padding: 8,
-            marginBottom:16,
-            marginHorizontal: 50,
-            color: '#fff',
-            backgroundColor: '#fff',
-            borderRadius: 100,
-            borderWidth: 1,
-            borderBottomColor: '#970E14'
-          }}>
-
-   
-       <TextInput
-        style={{marginHorizontal:10,
-        }}
-        placeholder="Telefon raqmini kiriting"
-        keyboardType="numeric"
-      />
-          </View>
-
-          <Text style= {{
-            color: 'ff8a90',
-            backgroundColor: 'ff8a90',
-fontSize: 13,
-fontWeight: '400',
-marginTop: 7,
-
-          }}>
-
-          Kiritilgan raqamga sms kod yuboriladi
-          </Text>
-          <Text style = {{
-              fontSize: 10,
-              backgroundColor: '#88261E',
-              marginTop: 17,
-              color: isDarkMode? Colors.black : Colors.white,
-              borderRadius: 10,
-              textAlign: 'center',
-              height: 36,
-              paddingVertical: 10,
-              marginHorizontal: 78,
-          }}>
-Tasdiqlash
-          </Text>
-        
-        <Text style = {{
-          marginHorizontal: 142,
-          marginTop: 32,
-        }}>
-        Ro’yxatdan o’tish
-          
-        </Text>
-        <View
-          style={{
-            
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.title}>Model S</Text>
+        <Text style={styles.subTitle}>Model S</Text>
+        <View style={styles.carContainer}></View>
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
+  container: {
     marginTop: 32,
     paddingHorizontal: 24,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
+  carContainer: {},
+  title: {
     marginTop: 8,
-    fontSize: 18,
+    fontSize: 50,
     fontWeight: '400',
   },
-  highlight: {
+  subTitle: {
     fontWeight: '700',
   },
 });
